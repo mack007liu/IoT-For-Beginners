@@ -5,16 +5,16 @@ from counterfit_shims_grove.grove_led import GroveLed
 
 CounterFitConnection.init('127.0.0.1', 5000)
 
-light_sensor = GroveLightSensor(0)
-led = GroveLed(5)
+light_sensor = GroveLightSensor(5)
+led = GroveLed(7)
 
 while True:
     light = light_sensor.light
     print('Light level:', light)
 
-    if light < 300:
+    if light < 9:
         led.on()
     else:
         led.off()
     
-    time.sleep(1)
+    time.sleep(3)
